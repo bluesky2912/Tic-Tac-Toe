@@ -1,0 +1,65 @@
+<!--tic tac toe-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cool Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <h1>⭐ Tic Tac Toe ⭐</h1>
+<!-- Player input fields -->
+    <div class="players">
+      <div class="player">
+        <label>Player X:</label>
+        <input id="playerX" type="text" placeholder="Enter name for X" />
+      </div>
+      <div class="player">
+        <label>Player O:</label>
+        <input id="playerO" type="text" placeholder="Enter name for O" />
+      </div>
+      <button id="startGame">Start Game</button>
+    </div>
+<!-- Game status display -->
+    <div class="status">
+      <span id="turnText">Click “Start Game”</span>
+    </div>
+<!-- Game board -->
+    <div class="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+<!-- Controls and scoreboard -->
+    <div class="controls">
+      <button id="newGame">New Game</button>
+      <button id="resetAll">Reset All (Scores)</button>
+    </div>
+<!-- Scoreboard -->
+    <div class="scoreboard">
+      <h2>Scoreboard</h2>
+      <div class="scores">
+        <div>X Wins: <span id="scoreX">0</span></div>
+        <div>O Wins: <span id="scoreO">0</span></div>
+        <div>Draws: <span id="scoreDraw">0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple sounds -->
+  <audio id="clickSound"
+         src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+  <audio id="winSound"
+         src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+
+  <script src="2.js"></script>
+</body>
+</html>
+<!-- made by BlueSky-->
