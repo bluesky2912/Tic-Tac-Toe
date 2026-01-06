@@ -1,4 +1,6 @@
-/* Reset + base */
+/* ===============================
+   Reset + Base
+================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,11 +15,15 @@ body {
   justify-content: center;
   background: #020617;
   color: #e5e7eb;
+  padding: 12px;
 }
 
-/* Main card */
+/* ===============================
+   Main Card
+================================ */
 .wrapper {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   padding: 22px 20px 26px;
   border-radius: 18px;
   background: #020617;
@@ -26,14 +32,18 @@ body {
   text-align: center;
 }
 
-/* Title */
+/* ===============================
+   Title
+================================ */
 h1 {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
   margin-bottom: 12px;
   color: #11d4f6;
 }
 
-/* Players section */
+/* ===============================
+   Players Section
+================================ */
 .players {
   display: flex;
   flex-direction: column;
@@ -51,6 +61,7 @@ h1 {
 .player label {
   font-size: 0.8rem;
   color: #9ca3af;
+  white-space: nowrap;
 }
 
 .player input {
@@ -72,10 +83,12 @@ h1 {
   border-color: #3b82f6;
 }
 
-/* Start button */
+/* ===============================
+   Start Button
+================================ */
 #startGame {
   margin-top: 6px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
@@ -85,7 +98,9 @@ h1 {
   background: #22c55e;
 }
 
-/* Status text */
+/* ===============================
+   Status Text
+================================ */
 .status {
   margin: 10px 0 12px;
   min-height: 20px;
@@ -96,24 +111,27 @@ h1 {
   color: #e5e7eb;
 }
 
-/* Board */
+/* ===============================
+   Game Board (Responsive)
+================================ */
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 96px);
-  grid-template-rows: repeat(3, 96px);
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1 / 1;
   gap: 6px;
   justify-content: center;
   margin-bottom: 14px;
 }
 
 .cell {
+  aspect-ratio: 1 / 1;
   background: #020617;
   border-radius: 12px;
   border: 1px solid #1f2937;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 8vw, 2.4rem);
   font-weight: 700;
   color: #e5e7eb;
   cursor: pointer;
@@ -134,13 +152,13 @@ h1 {
   cursor: default;
 }
 
-/* Optional: color X and O if you use is-x / is-o classes in JS */
+/* X & O colors */
 .cell.is-x {
-  color: #ef4444;       /* red */
+  color: #ef4444;
 }
 
 .cell.is-o {
-  color: #3b82f6;       /* blue */
+  color: #3b82f6;
 }
 
 /* Winning cells */
@@ -149,7 +167,9 @@ h1 {
   border-color: #22c55e;
 }
 
-/* Controls */
+/* ===============================
+   Controls
+================================ */
 .controls {
   display: flex;
   justify-content: center;
@@ -158,7 +178,7 @@ h1 {
 }
 
 .controls button {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
@@ -171,7 +191,9 @@ h1 {
   background: #1f2937;
 }
 
-/* Scoreboard */
+/* ===============================
+   Scoreboard
+================================ */
 .scoreboard {
   border-top: 1px solid #111827;
   padding-top: 8px;
@@ -186,6 +208,7 @@ h1 {
 .scores {
   display: flex;
   justify-content: space-between;
+  gap: 6px;
   font-size: 0.85rem;
 }
 
@@ -193,6 +216,40 @@ h1 {
   padding: 4px 6px;
   border-radius: 6px;
   background: #01061a;
+  flex: 1;
 }
-/* End of style.css */
-/* made by BlueSky*/
+
+/* ===============================
+   Mobile Optimization
+================================ */
+@media (max-width: 480px) {
+
+  .wrapper {
+    padding: 18px 14px 20px;
+  }
+
+  .player label,
+  .player input,
+  #startGame,
+  .controls button {
+    font-size: 0.75rem;
+  }
+
+  .scores {
+    flex-direction: column;
+  }
+}
+
+/* ===============================
+   Tablet / Desktop Enhancement
+================================ */
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 420px;
+  }
+}
+
+/* ===============================
+   End of style.css
+   made by BlueSky
+================================ */
